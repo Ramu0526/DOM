@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ramus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedores">
+        <div class="contenedor" id="contenedor1">
+            <h3>Hu Tao</h3>
+            <button class="boton" onclick="mostrarInfo(1)">Hola Ramu :3</button>
+            <div class="info" id="info1">
+                <p>"Soy la directora de la Funeraria Wangsheng en Liyue. Sí, tengo un toque peculiar y un sentido del humor oscuro... Es lo que se necesita en este trabajo.
+                </p>
+                <p>¿Sabes? Encuentro similitudes entre manejar el fuego y manejar el código en una página web. Por ejemplo, al usar getElementById, se busca y selecciona un único elemento por su id.
+                </p>
+                <p>Así, como en el fuego, cada elemento tiene un propósito específico y único en la página. Puedes llamarlo "div id='miElemento'", y entonces sabrás exactamente dónde encontrarlo.
+                </p>
+                <p>¿Acaso no es fascinante cómo todo puede estar en su lugar con un solo clic, o un simple toque de llama?"
+                </p>
+                <button class="boton boton-cancelar" onclick="ocultarInfo()">Adios Ramu</button>
+            </div>
+        </div>
+
+        <div class="contenedor" id="contenedor2" >
+            <h3>Mavuika</h3>
+            <button class="boton" onclick="mostrarInfo(2)">Hola Ramu :></button>
+            <div class="info" id="info2">
+                <p>"Es conocida por su inteligencia y astucia, y su alineación moral no siempre es clara... Lo mismo ocurre con ciertos elementos en el código.
+                </p>
+                <p>Usando getElementsByClassName, puedes seleccionar todos los elementos que comparten una clase específica; ellos se agrupan en una colección, pero, como sus intenciones, cada uno tiene su propio índice y puede ser manipulado de forma individual.
+                </p>
+                <p>igual que ella, cada elemento cumple un propósito, pero debes conocer el índice adecuado para acceder a cada uno de ellos."
+                </p>
+                <button class="boton boton-cancelar" onclick="ocultarInfo()">Adios Ramu</button>
+            </div>
+        </div>
+
+        <div class="contenedor" id="contenedor3">
+            <h3>Yae Miko</h3>
+            <button class="boton" onclick="mostrarInfo(3)">Hola Ramu -_-</button>
+            <div class="info" id="info3">
+                <p>"Yae Miko es una sacerdotisa y figura central en Inazuma, conocida por su habilidad para ver lo que otros pasan por alto. Similar a getElementsByTagName en el código, que encuentra todos los elementos con un nombre de etiqueta específico como div, p o span</p>
+                <p>Yae Miko parece percibir cada detalle y reunir todos los hilos de la historia. Al igual que esta función devuelve una colección completa de elementos</p>
+                <p>ella reúne cada pieza de información y cada conexión oculta, logrando ver el cuadro completo de su mundo."</p>
+                <button class="boton boton-cancelar" onclick="ocultarInfo()">Adios Ramu</button>
+            </div>
+        </div>
+
+        <div class="contenedor" id="contenedor4">
+            <h3>Furina</h3>
+            <button class="boton" onclick="mostrarInfo(4)">Hola Ramu :D</button>
+            <div class="info" id="info4">
+                <p>"Furina representa los ideales de Fontaine, liderando a su gente con un estilo único lleno de espectáculo y teatralidad. Al igual que un querySelector en el código, ella sabe exactamente a quién captar primero en cualquier multitud.</p>
+                <p>Como querySelector selecciona el primer elemento que coincide con un selector CSS, sea un #id, .clase o tag, Furina también es precisa, buscando a quien mejor se ajuste a sus necesidades en cada situación.</p>
+                <p>Poderosa y flexible, ella sabe que un toque bien colocado es más efectivo que cualquier multitud sin dirección."</p>
+                <button class="boton boton-cancelar" onclick="ocultarInfo()">Adios Ramu</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarInfo(num) {
+            const contenedores = document.getElementsByClassName('contenedor');
+            for (let contenedor of contenedores) {
+                contenedor.style.display = 'none';
+            }
+
+            const contenedorSeleccionado = document.getElementById('contenedor' + num);
+            contenedorSeleccionado.style.display = 'block';
+
+            document.getElementById('info' + num).style.display = 'block';
+
+            const botonMostrar = contenedorSeleccionado.querySelector('.boton');
+            botonMostrar.innerText = 'Holis';
+        }
+
+        function ocultarInfo() {
+            const contenedores = document.getElementsByClassName('contenedor');
+            for (let contenedor of contenedores) {
+                contenedor.style.display = 'block';
+            }
+
+            const infos = document.getElementsByClassName('info');
+            for (let info of infos) {
+                info.style.display = 'none';
+            }
+
+            const titulos = document.getElementsByTagName('h3');
+            for (let titulo of titulos) {
+                titulo.style.color = black;
+            }
+        }
+    </script>
+
